@@ -41,9 +41,10 @@ var codecs = map[string]codec{
 }
 
 func main() {
+	
 	text := ""
 	if len(os.Args) < 1{
-		log.Fatalf("Nothing to translate to speach here" )
+		log.Fatalf("Nothing to translate to speech here" )
 	}else{
 		text = os.Args[1]
 	}
@@ -73,7 +74,7 @@ func main() {
 	}
 
 	//Playback recieved text Message
-    myAgi.Verbose( playback(text, audioformat, myAgi ))
+	myAgi.Verbose( playback(text, audioformat, myAgi ))
 }
 //play text to asterisk
 func playback(text string, format string, myAgi *agi.Session) string{
